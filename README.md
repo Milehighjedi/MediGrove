@@ -2,7 +2,7 @@
 
 
 About This Application
-This app is designed to allow users to conduct more productive meetings. It allows users to create meetings and share the meeting URL with others, and then provide real-time feedback about the meeting.
+This app is designed to allow users to maintain inventory of products from multiple vendors while finding replacements as items become discontinued.
 
 Features:
 Inventory Management
