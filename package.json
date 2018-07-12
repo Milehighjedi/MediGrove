@@ -1,20 +1,29 @@
 {
   "name": "medigrove",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Medical Inventory App",
+  "main": "server.js",
   "scripts": {
-    "heroku-prebuild": "rm -rf public/ && mkdir public",
-    "heroku-postbuild": "cd client && npm i && npm run build",
-    "start": "node app.js",
-    "dev": "concurrently \"node app.js\" \"cd client && yarn start\""
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Milehighjedi/MediGrove.git"
+  },
+  "author": "Milehighjedi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Milehighjedi/MediGrove/issues"
+  },
+  "homepage": "https://github.com/Milehighjedi/MediGrove#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^3.6.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0"
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.1"
   }
 }
