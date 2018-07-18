@@ -1,3 +1,5 @@
-module.exports = {
-    mongoURI: 'mongodb://luke:Rebellak23@ds235431.mlab.com:35431/medigrove'
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./keys_prod');
+} else {
+  module.exports = require('./keys_dev');
 }
