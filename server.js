@@ -30,15 +30,12 @@ app.use(passport.initialize());
 // Passport Config
 require('./config/passport')(passport);
 
-// Use Routes
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 app.use('/api/items', items);
 
-// Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {

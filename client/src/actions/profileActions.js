@@ -9,7 +9,6 @@ import {
   SET_CURRENT_USER
 } from './types';
 
-// Get current profile
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -28,7 +27,6 @@ export const getCurrentProfile = () => dispatch => {
     );
 };
 
-// Get profile by handle
 export const getProfileByUserName = username => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -47,7 +45,6 @@ export const getProfileByUserName = username => dispatch => {
     );
 };
 
-// Create Profile
 export const createProfile = (profileData, history) => dispatch => {
   axios
     .post('/api/profile', profileData)
@@ -60,7 +57,6 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
-// Get all profiles
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -79,7 +75,6 @@ export const getProfiles = () => dispatch => {
     );
 };
 
-// Delete account & profile
 export const deleteAccount = () => dispatch => {
   if (window.confirm('Are you sure? This can NOT be undone!')) {
     axios
@@ -99,14 +94,12 @@ export const deleteAccount = () => dispatch => {
   }
 };
 
-// Profile loading
 export const setProfileLoading = () => {
   return {
     type: PROFILE_LOADING
   };
 };
 
-// Clear profile
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE

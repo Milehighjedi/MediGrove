@@ -3,12 +3,10 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-// Load Validation
 const validateProfileInput = require('../../validation/profile');
 
-// Load Profile Model
 const Profile = require('../../models/Profile');
-// Load User Model
+
 const User = require('../../models/User');
 
 // @route   GET api/profile/test
@@ -108,13 +106,10 @@ router.post(
   (req, res) => {
     const { errors, isValid } = validateProfileInput(req.body);
 
-    // Check Validation
     if (!isValid) {
-      // Return any errors with 400 status
       return res.status(400).json(errors);
     }
 
-    // Get fields
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.username) profileFields.username = req.body.username;
@@ -126,23 +121,18 @@ router.post(
 
     Profile.findOne({ user: req.user.id }).then(profile => {
       if (profile) {
-        // Update
         Profile.findOneAndUpdate(
           { user: req.user.id },
           { $set: profileFields },
           { new: true }
         ).then(profile => res.json(profile));
       } else {
-        // Create
-
-        // Check if handle exists
         Profile.findOne({ handle: profileFields.username }).then(profile => {
           if (profile) {
             errors.username = 'That username already exists';
             res.status(400).json(errors);
           }
 
-          // Save Profile
           new Profile(profileFields).save().then(profile => res.json(profile));
         });
       }
