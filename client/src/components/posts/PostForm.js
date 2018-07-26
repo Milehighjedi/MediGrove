@@ -29,8 +29,7 @@ class PostForm extends Component {
 
     const newPost = {
       text: this.state.text,
-      name: user.name,
-      avatar: user.avatar
+      name: user.name
     };
 
     this.props.addPost(newPost);
@@ -81,4 +80,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addPost })(PostForm);
+export default connect(
+  mapStateToProps,
+  { addPost }
+)(PostForm);

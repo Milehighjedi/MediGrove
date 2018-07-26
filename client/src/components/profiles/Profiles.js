@@ -31,11 +31,13 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center">Developer Profiles</h1>
-              <p className="lead text-center">
-                Browse and connect with developers
-              </p>
-              {profileItems}
+              <div className="card bg-dark text-white">
+                <h1 className="display-4 text-center">Contacts</h1>
+                <p className="lead text-center">
+                  Reach out to find the answer you need
+                </p>
+                {profileItems}
+              </div>
             </div>
           </div>
         </div>
@@ -53,4 +55,7 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getProfiles })(Profiles);
+export default connect(
+  mapStateToProps,
+  { getProfiles }
+)(Profiles);

@@ -20,7 +20,7 @@ class Landing extends Component {
                 <h1 className="display-3 mb-4">MediGrove</h1>
                 <p className="lead">
                   {' '}
-                  Keep track of your current products and the people who provide
+                  Keep track of changing products and the people who provide
                   them to you
                 </p>
                 <hr />
