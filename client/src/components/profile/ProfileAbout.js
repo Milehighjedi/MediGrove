@@ -8,7 +8,6 @@ class ProfileAbout extends Component {
 
     // Get first name
     const firstName = profile.user.name.trim().split(' ')[0];
-    const email = profile.user.email;
 
     return (
       <div className="row">
